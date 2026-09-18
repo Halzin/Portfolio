@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AURA — case conceitual para boutique de moda autoral." />
+    <title>AURA — Moda para a vida real</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#inicio" aria-label="AURA, início">AURA<span>.</span></a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#colecao">Coleção</a>
+          <a href="#sobre">A nossa história</a>
+          <a href="#visitar">Visite a loja</a>
+        </nav>
+        <button class="bag-button" id="bagButton" type="button" aria-haspopup="dialog" aria-controls="bagPanel">
+          <span>Sacola</span><b>0</b>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero" id="inicio">
+          <div class="hero-copy">
+            <p class="microcopy">Nova coleção · edição limitada</p>
+            <h1>Feita para<br /><em>acompanhar</em><br />você.</h1>
+            <p class="hero-text">Peças autorais, pequenos lotes e aquele cuidado que faz uma roupa virar favorita.</p>
+            <a class="text-action" href="#colecao">Ver a coleção <span aria-hidden="true">↘</span></a>
+          </div>
+          <div class="hero-visual">
+            <img src="assets/hero-aura.png" alt="Modelo usando vestido terracota em frente à boutique AURA" />
+            <button class="look-marker marker-top" type="button" data-product="vestido" aria-label="Ver detalhes do Vestido Nuvem"><span>+</span><small>Vestido Nuvem</small></button>
+            <div class="image-caption"><span>01</span><span>Verão em movimento</span></div>
+          </div>
+          <aside class="hero-note">
+            <span>Ateliê & boutique</span>
+            <span>Feito em pequenos lotes</span>
+          </aside>
+        </section>
+
+        <section class="marquee" aria-label="Características da AURA">
+          <div><span>Peças que ficam</span><i>✳</i><span>Produção local</span><i>✳</i><span>Estilo sem exagero</span><i>✳</i><span>Peças que ficam</span></div>
+        </section>
+
+        <section class="collection" id="colecao">
+          <div class="section-intro">
+            <p class="microcopy">Seleção da semana</p>
+            <h2>Pequenas tiragens.<br /><em>Grandes encontros.</em></h2>
+            <p>Escolha uma peça para abrir sua janela de detalhes.</p>
+          </div>
+          <div class="product-grid">
+            <article class="product-card featured" data-product="vestido" tabindex="0">
+              <button class="product-open" type="button" aria-label="Abrir Vestido Nuvem">
+                <span class="garment dress"></span>
+                <span class="product-meta"><b>Vestido Nuvem</b><small>R$ 189,00</small></span>
+                <span class="product-index">01</span>
+              </button>
+            </article>
+            <article class="product-card olive" data-product="blusa" tabindex="0">
+              <button class="product-open" type="button" aria-label="Abrir Blusa Linha">
+                <span class="garment blouse"></span>
+                <span class="product-meta"><b>Blusa Linha</b><small>R$ 119,00</small></span>
+                <span class="product-index">02</span>
+              </button>
+            </article>
+            <article class="product-card stripe" data-product="saia" tabindex="0">
+              <button class="product-open" type="button" aria-label="Abrir Saia Encontro">
+                <span class="garment skirt"></span>
+                <span class="product-meta"><b>Saia Encontro</b><small>R$ 149,00</small></span>
+                <span class="product-index">03</span>
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <section class="story" id="sobre">
+          <div class="story-content">
+            <p class="microcopy">O jeito AURA de fazer</p>
+            <h2>Uma loja local,<br />com roupa <em>de verdade.</em></h2>
+            <p>Da escolha do tecido até o último botão, cada peça nasce perto. A gente produz em pouca quantidade para criar com mais cuidado e vender com preço justo.</p>
+            <div class="story-tags"><span>Modelagem própria</span><span>Costura local</span><span>Trocas sem complicação</span></div>
+          </div>
+          <div class="story-aside"><span>Não é sobre ter mais.</span><span>É sobre ter o que faz sentido.</span></div>
+        </section>
+
+        <section class="visit" id="visitar">
+          <p class="microcopy">Vem conversar</p>
+          <h2>Seu próximo<br /><em>favorito</em> pode<br />estar aqui.</h2>
+          <div class="visit-bottom">
+            <p>Rua das Flores, 187<br />Ter–Sex, 10h às 18h · Sáb, 10h às 14h</p>
+            <a class="round-action" href="https://wa.me/5524992017444" target="_blank" rel="noreferrer">Chamar<br />no WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer><span>© AURA 2026 — Case conceitual criado por Gustavo Martins.</span><a href="#inicio">Voltar ao topo ↑</a></footer>
+    </div>
+
+    <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogTitle">
+      <button class="dialog-close" type="button" aria-label="Fechar janela">×</button>
+      <div class="dialog-art"><span class="garment dress" id="dialogGarment"></span></div>
+      <div class="dialog-copy">
+        <p class="microcopy">Disponível agora</p>
+        <h2 id="dialogTitle">Vestido Nuvem</h2>
+        <p class="dialog-price" id="dialogPrice">R$ 189,00</p>
+        <p id="dialogDescription">Leve, soltinho e feito para dias que pedem movimento. Em viscose com botões de madeira.</p>
+        <div class="size-row" aria-label="Selecione o tamanho"><button type="button">P</button><button type="button">M</button><button type="button">G</button></div>
+        <button class="add-button" type="button" id="addButton">Adicionar à sacola <span aria-hidden="true">↗</span></button>
+      </div>
+    </dialog>
+
+    <aside class="bag-panel" id="bagPanel" aria-live="polite" aria-label="Sacola de compras">
+      <button class="bag-close" type="button" aria-label="Fechar sacola">×</button>
+      <p class="microcopy">Sua sacola</p>
+      <h2>Por enquanto,<br /><em>vazia.</em></h2>
+      <p class="bag-message">Escolha uma peça e ela aparece aqui.</p>
+    </aside>
+    <script src="script.js"></script>
+  </body>
+</html>
