@@ -862,3 +862,35 @@ h1 em {
     transform: none !important;
   }
 }
+/* Project preview: dynamic case showcase */
+.projects-frame {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
+  gap: clamp(3rem, 9vw, 10rem);
+}
+.project-preview {
+  min-height: 34rem;
+  display: grid;
+  grid-template-columns: minmax(12rem, .7fr) minmax(16rem, 1fr);
+  background: #151515;
+}
+.project-preview-image {
+  min-height: 100%;
+  background: url("https://aura-boutique-eta.vercel.app/assets/hero-aura.png") center / cover no-repeat;
+  transition: filter 500ms var(--ease-out), opacity 500ms var(--ease-out);
+}
+.project-preview-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 4vw, 3.5rem); }
+.project-preview-copy h2 { max-width: 9ch; }
+.project-preview-copy p:not(.project-label) { max-width: 38ch; margin: 1.5rem 0 0; color: #b6b7bb; }
+.project-label { margin: 0 0 1rem; color: #dce8ff; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.project-link { display: inline-flex; width: fit-content; align-items: center; gap: .9rem; margin-top: 2rem; color: var(--white); font-size: .9rem; font-weight: 600; text-underline-offset: .35em; }
+.project-link svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.project-link[aria-disabled="true"] { color: #85868a; pointer-events: none; text-decoration: none; }
+.project-index { align-self: start; border-top: 1px solid #4a4a4a; }
+.project-choice { display: flex; width: 100%; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; color: #c6c7ca; background: transparent; border: 0; border-bottom: 1px solid #4a4a4a; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.8rem); font-stretch: 110%; font-weight: 330; line-height: 1; text-align: left; transition: color 250ms ease, padding-left 300ms var(--ease-out); }
+.project-choice small { color: #85868a; font-family: var(--body); font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.project-choice:hover, .project-choice.is-active { padding-left: .8rem; color: var(--white); }
+.project-choice.is-active::before { width: .45rem; height: .45rem; content: ""; flex: 0 0 auto; margin-right: -.7rem; background: #dce8ff; border-radius: 50%; }
+.projects-note { grid-column: 1 / -1; margin: 4rem 0 0; color: #929398; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; }
+@media (max-width: 980px) { .projects-frame { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .project-preview { min-height: auto; grid-template-columns: 1fr; } .project-preview-image { min-height: 20rem; } .project-preview-copy { min-height: 24rem; } }
