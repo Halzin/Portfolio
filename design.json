@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-18T13:55:00-03:00",
+  "title": "Design System: Gustavo Martins Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink-black": {
+        "role": "primary",
+        "displayName": "Ink Black",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#0a0a0a", "#202020", "#373737", "#555555", "#777777", "#9d9d9d", "#c7c7c7", "#f2f2f2"]
+      },
+      "cool-paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f5f6f8",
+        "tonalRamp": ["#202226", "#363940", "#50545d", "#707681", "#949aa5", "#b9bec7", "#dde0e5", "#f5f6f8"]
+      },
+      "motion-blue-paper": {
+        "role": "secondary",
+        "displayName": "Motion Blue Paper",
+        "canonical": "#e7edf5",
+        "tonalRamp": ["#18202b", "#293749", "#40546d", "#5d7592", "#8198b3", "#a9bacd", "#cfdae7", "#edf2f7"]
+      },
+      "pure-white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#262626", "#414141", "#5f5f5f", "#808080", "#a3a3a3", "#c4c4c4", "#e2e2e2", "#ffffff"]
+      },
+      "graphite-copy": {
+        "role": "neutral",
+        "displayName": "Graphite Copy",
+        "canonical": "#5c6068",
+        "tonalRamp": ["#202226", "#303238", "#454850", "#5c6068", "#777b83", "#999ca3", "#c0c2c7", "#ececee"]
+      },
+      "structural-line": {
+        "role": "neutral",
+        "displayName": "Structural Line",
+        "canonical": "#c9ccd2",
+        "tonalRamp": ["#24262a", "#393c41", "#53565c", "#70747b", "#92969e", "#b4b8c0", "#d3d6dc", "#f0f1f3"]
+      },
+      "focus-blue": {
+        "role": "tertiary",
+        "displayName": "Focus Blue",
+        "canonical": "#245cff",
+        "tonalRamp": ["#081a4a", "#0d2a75", "#123ca3", "#1850d2", "#3c6fff", "#7898ff", "#b1c3ff", "#edf1ff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Kinetic Display", "purpose": "Section-scale statements and high-impact editorial moments." },
+      "hero": { "displayName": "Offer Hero", "purpose": "The primary offer in the first viewport." },
+      "body": { "displayName": "Body", "purpose": "Readable explanations and supporting copy." },
+      "label": { "displayName": "Functional Label", "purpose": "Compact metadata and interface labels." }
+    },
+    "shadows": [
+      { "name": "panel-ambient", "value": "0 24px 60px rgba(10, 10, 10, 0.18)", "purpose": "Permanent depth for the single kinetic proof surface." },
+      { "name": "control-rest", "value": "0 10px 24px rgba(10, 10, 10, 0.15)", "purpose": "Primary action at rest." },
+      { "name": "control-hover", "value": "0 16px 32px rgba(10, 10, 10, 0.22)", "purpose": "Primary action during hover." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Directional movement, reveal settling, and interactive lift." },
+      { "name": "reveal", "value": "800ms", "purpose": "One-time section reveal with opacity, translation, and blur." },
+      { "name": "kinetic-resolve", "value": "700ms", "purpose": "Return the kinetic type field to stillness." }
+    ],
+    "breakpoints": [
+      { "name": "composition-collapse", "value": "980px" },
+      { "name": "mobile", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The decisive contact action used on light surfaces.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Conversar sobre um projeto<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M5 15 15 5M7 5h8v8\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:1.3rem;min-height:3.5rem;padding:.85rem 1.15rem;background:#0a0a0a;color:#fff;border-radius:.8rem;font:600 .9rem Manrope,Arial,sans-serif;text-decoration:none;box-shadow:0 10px 24px rgba(10,10,10,.15);transition:transform 250ms cubic-bezier(.16,1,.3,1),box-shadow 250ms cubic-bezier(.16,1,.3,1)}.ds-btn-primary svg{width:1rem;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}.ds-btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(10,10,10,.22)}.ds-btn-primary:focus-visible{outline:3px solid #245cff;outline-offset:4px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "A quieter secondary action with no container.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Conhecer os serviços</a>",
+      "css": ".ds-text-link{color:#0a0a0a;font:600 .9rem Manrope,Arial,sans-serif;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-text-link:focus-visible{outline:3px solid #245cff;outline-offset:4px}"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Quiet links with one filled contact action.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Serviços</a><a href=\"#\">Processo</a><a class=\"ds-nav-contact\" href=\"#\">Falar comigo</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:2rem;font:500 .88rem Manrope,Arial,sans-serif}.ds-nav a{color:#0a0a0a;text-decoration:none}.ds-nav .ds-nav-contact{padding:.72rem 1rem;background:#0a0a0a;color:#fff;border-radius:.7rem}.ds-nav a:focus-visible{outline:3px solid #245cff;outline-offset:4px}"
+    },
+    {
+      "name": "Kinetic Type Field",
+      "kind": "custom",
+      "refersTo": "panel-kinetic",
+      "description": "The signature black proof surface with variable-width stacked type.",
+      "html": "<div class=\"ds-kinetic\"><span>SITE</span><span>LANDING</span><strong>PRESENÇA</strong><span>MOVIMENTO</span></div>",
+      "css": ".ds-kinetic{display:flex;flex-direction:column;justify-content:center;min-height:320px;padding:2rem;overflow:hidden;background:#0a0a0a;color:#fff;border-radius:1rem;box-shadow:0 24px 60px rgba(10,10,10,.18)}.ds-kinetic span,.ds-kinetic strong{font-family:Anybody,Arial Narrow,sans-serif;font-size:4rem;font-weight:420;letter-spacing:-.04em;line-height:.78}.ds-kinetic strong{font-weight:620}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Editorial service presentation without card chrome.",
+      "html": "<article class=\"ds-service\"><h3>Site institucional</h3><p>Uma presença completa para apresentar seu negócio com clareza e personalidade.</p></article>",
+      "css": ".ds-service{display:grid;grid-template-columns:.9fr 1.3fr;gap:3rem;padding:2.5rem 0;border-top:1px solid #0a0a0a;border-bottom:1px solid #c9ccd2;color:#0a0a0a}.ds-service h3{margin:0;font:550 2rem/1 Anybody,Arial Narrow,sans-serif}.ds-service p{max-width:48ch;margin:0;color:#30343a;font:400 1rem/1.6 Manrope,Arial,sans-serif}"
+    },
+    {
+      "name": "Round Contact Action",
+      "kind": "button",
+      "refersTo": "contact-action",
+      "description": "A high-salience closing action with a directional line icon.",
+      "html": "<a class=\"ds-round-action\" href=\"#\" aria-label=\"Conversar\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><path d=\"M12 50h68M55 24l26 26-26 26\"/></svg></a>",
+      "css": ".ds-round-action{display:grid;width:8rem;height:8rem;place-items:center;background:#0a0a0a;color:#fff;border-radius:50%;transition:transform 450ms cubic-bezier(.16,1,.3,1),box-shadow 450ms cubic-bezier(.16,1,.3,1)}.ds-round-action svg{width:55%;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:4}.ds-round-action:hover{transform:rotate(-18deg) scale(1.04);box-shadow:0 18px 40px rgba(10,10,10,.2)}.ds-round-action:focus-visible{outline:3px solid #245cff;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Kinetic Studio Index",
+    "overview": "The system behaves like a sharp independent studio: direct typography, disciplined black fields, cool paper surfaces, and motion that reveals structure rather than decorating it. Density changes across the page—compressed type gives way to broad quiet fields—so the experience feels authored and paced. The visual proof comes from the interface itself.",
+    "keyCharacteristics": [
+      "Compressed variable display typography at decisive scale.",
+      "Near-black and cool paper used as large fields, not scattered accents.",
+      "Fine structural rules and generous vertical rhythm.",
+      "Directional motion that resolves to stillness.",
+      "Direct, approachable language with minimal ornament."
+    ],
+    "rules": [
+      { "name": "The Field Rule", "body": "Black and pale blue own complete regions; they are not reduced to decorative chips or random accents.", "section": "colors" },
+      { "name": "The Functional Blue Rule", "body": "Saturated blue is reserved for focus visibility and browser interaction feedback.", "section": "colors" },
+      { "name": "The Width-Is-Voice Rule", "body": "Use the display face's variable width to create hierarchy; do not add decorative typefaces or gradient text.", "section": "typography" },
+      { "name": "The Two-Voice Rule", "body": "Anybody speaks at display scale; Manrope carries navigation, body copy, labels, and controls.", "section": "typography" },
+      { "name": "The Earned Depth Rule", "body": "Use shadow for interactive lift or a single focal surface, never to outline every container.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use black and pale blue as complete spatial fields.",
+      "Do vary display width and weight to create rhythm inside one type family.",
+      "Do use one coordinated motion moment and allow the rest of the page to remain calm.",
+      "Do preserve visible keyboard focus, reduced-motion behavior, and 16px body copy.",
+      "Do use honest labels for future conceptual work."
+    ],
+    "donts": [
+      "Don't add invented testimonials, client logos, metrics, or results.",
+      "Don't replace editorial rows with repeated icon cards.",
+      "Don't introduce warm cream, neon glow, glass panels, or gradient text.",
+      "Don't use emoji or Unicode characters as interface icons; use the established stroked SVG language.",
+      "Don't distribute many unrelated hover and entrance effects across the page."
+    ]
+  }
+}
+
