@@ -180,11 +180,22 @@ a {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   min-height: min(100svh, 70rem);
   grid-template-columns: minmax(0, 1.05fr) minmax(25rem, 0.95fr);
   padding: calc(4.5rem + var(--page-pad)) var(--page-pad) var(--page-pad);
   gap: clamp(2rem, 4vw, 5rem);
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgba(245, 246, 248, 0.94) 0%, rgba(245, 246, 248, 0.87) 42%, rgba(245, 246, 248, 0.48) 100%), url("./hero-workspace.png") center / cover;
+  opacity: 0.56;
 }
 
 .hero-copy {
@@ -495,30 +506,44 @@ h1 em {
   gap: clamp(3rem, 9vw, 10rem);
 }
 
-.projects-frame h2 {
-  max-width: 9ch;
-}
-
-.projects-frame > div:first-child p {
-  max-width: 52ch;
-  margin: 2rem 0 0;
-  color: #b6b7bb;
-}
+.project-preview { min-height: 34rem; display: grid; grid-template-columns: minmax(12rem, .7fr) minmax(16rem, 1fr); background: #151515; }
+.project-preview-image { min-height: 100%; background: url("https://aura-boutique-eta.vercel.app/assets/hero-aura.png") center / cover no-repeat; transition: filter 500ms var(--ease-out), opacity 500ms var(--ease-out); }
+.project-preview-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 4vw, 3.5rem); }
+.project-preview-copy h2 { max-width: 9ch; }
+.project-preview-copy p:not(.project-label) { max-width: 38ch; margin: 1.5rem 0 0; color: #b6b7bb; }
+.project-label { margin: 0 0 1rem; color: #dce8ff; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.project-link { display: inline-flex; width: fit-content; align-items: center; gap: .9rem; margin-top: 2rem; color: var(--white); font-size: .9rem; font-weight: 600; text-underline-offset: .35em; }
+.project-link svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.project-link[aria-disabled="true"] { color: #85868a; pointer-events: none; text-decoration: none; }
 
 .project-index {
   align-self: start;
   border-top: 1px solid #4a4a4a;
 }
 
-.project-index span {
-  display: block;
+.project-choice {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 1.1rem 0;
+  color: #c6c7ca;
+  background: transparent;
+  border: 0;
   border-bottom: 1px solid #4a4a4a;
   font-family: var(--display);
   font-size: clamp(1.5rem, 3vw, 2.8rem);
   font-stretch: 110%;
   font-weight: 330;
+  line-height: 1;
+  text-align: left;
+  transition: color 250ms ease, padding-left 300ms var(--ease-out);
 }
+
+.project-choice small { color: #85868a; font-family: var(--body); font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.project-choice:hover, .project-choice.is-active { padding-left: .8rem; color: var(--white); }
+.project-choice.is-active::before { width: .45rem; height: .45rem; content: ""; flex: 0 0 auto; margin-right: -.7rem; background: #dce8ff; border-radius: 50%; }
 
 .projects-note {
   grid-column: 1 / -1;
@@ -536,24 +561,21 @@ h1 em {
 .process-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--ink);
   list-style: none;
 }
 
 .process-list li {
   min-height: 18rem;
-  padding: 1.25rem 1.5rem 1.5rem 0;
-  border-right: 1px solid var(--line);
+  padding: 1.5rem;
+  background: var(--paper);
+  border-radius: 0.8rem;
 }
 
 .process-list li + li {
   padding-left: 1.5rem;
-}
-
-.process-list li:last-child {
-  border-right: 0;
 }
 
 .process-marker {
@@ -562,9 +584,18 @@ h1 em {
   height: 2.1rem;
   place-items: center;
   border: 1px solid var(--ink);
-  border-radius: 50%;
-  font-size: 0.75rem;
-  font-weight: 600;
+  border-radius: 0.55rem;
+}
+
+.process-marker svg,
+.contact-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 .process-list div {
@@ -651,6 +682,9 @@ h1 em {
 }
 
 .contact-details a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 0.92rem;
   font-weight: 600;
 }
@@ -797,6 +831,10 @@ h1 em {
     gap: 1.5rem;
   }
 
+  .project-preview { min-height: auto; grid-template-columns: 1fr; }
+  .project-preview-image { min-height: 20rem; }
+  .project-preview-copy { min-height: 24rem; }
+
   .service-row {
     grid-template-columns: 1fr;
   }
@@ -862,35 +900,3 @@ h1 em {
     transform: none !important;
   }
 }
-/* Project preview: dynamic case showcase */
-.projects-frame {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
-  gap: clamp(3rem, 9vw, 10rem);
-}
-.project-preview {
-  min-height: 34rem;
-  display: grid;
-  grid-template-columns: minmax(12rem, .7fr) minmax(16rem, 1fr);
-  background: #151515;
-}
-.project-preview-image {
-  min-height: 100%;
-  background: url("https://aura-boutique-eta.vercel.app/assets/hero-aura.png") center / cover no-repeat;
-  transition: filter 500ms var(--ease-out), opacity 500ms var(--ease-out);
-}
-.project-preview-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 4vw, 3.5rem); }
-.project-preview-copy h2 { max-width: 9ch; }
-.project-preview-copy p:not(.project-label) { max-width: 38ch; margin: 1.5rem 0 0; color: #b6b7bb; }
-.project-label { margin: 0 0 1rem; color: #dce8ff; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-.project-link { display: inline-flex; width: fit-content; align-items: center; gap: .9rem; margin-top: 2rem; color: var(--white); font-size: .9rem; font-weight: 600; text-underline-offset: .35em; }
-.project-link svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
-.project-link[aria-disabled="true"] { color: #85868a; pointer-events: none; text-decoration: none; }
-.project-index { align-self: start; border-top: 1px solid #4a4a4a; }
-.project-choice { display: flex; width: 100%; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; color: #c6c7ca; background: transparent; border: 0; border-bottom: 1px solid #4a4a4a; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.8rem); font-stretch: 110%; font-weight: 330; line-height: 1; text-align: left; transition: color 250ms ease, padding-left 300ms var(--ease-out); }
-.project-choice small { color: #85868a; font-family: var(--body); font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
-.project-choice:hover, .project-choice.is-active { padding-left: .8rem; color: var(--white); }
-.project-choice.is-active::before { width: .45rem; height: .45rem; content: ""; flex: 0 0 auto; margin-right: -.7rem; background: #dce8ff; border-radius: 50%; }
-.projects-note { grid-column: 1 / -1; margin: 4rem 0 0; color: #929398; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; }
-@media (max-width: 980px) { .projects-frame { grid-template-columns: 1fr; } }
-@media (max-width: 720px) { .project-preview { min-height: auto; grid-template-columns: 1fr; } .project-preview-image { min-height: 20rem; } .project-preview-copy { min-height: 24rem; } }

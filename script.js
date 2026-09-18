@@ -46,6 +46,63 @@ if (kinetic && !reduceMotion.matches) {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
+const projectChoices = document.querySelectorAll("[data-project]");
+const projectPreview = document.querySelector("[data-project-preview]");
+
+const projects = {
+  moda: {
+    label: "Case conceitual · Boutique local",
+    title: "AURA",
+    description: "Uma boutique autoral, próxima e acessível, criada para valorizar pequenas coleções, atendimento local e venda pelo WhatsApp.",
+    href: "https://aura-boutique-eta.vercel.app/",
+    action: "Ver case completo",
+    image: "https://aura-boutique-eta.vercel.app/assets/hero-aura.png",
+    available: true,
+  },
+  gastronomia: {
+    label: "Próximo case · Gastronomia",
+    title: "Sabor em construção",
+    description: "Um novo conceito para transformar cardápio, atmosfera e pedidos diretos em uma experiência digital marcante.",
+    action: "Case em produção",
+    image: "",
+    available: false,
+  },
+  servicos: {
+    label: "Próximo case · Serviços",
+    title: "Presença que explica",
+    description: "Um conceito pensado para negócios que precisam apresentar seu valor com clareza e levar o visitante até o contato.",
+    action: "Case em produção",
+    image: "",
+    available: false,
+  },
+};
+
+projectChoices.forEach((choice) => {
+  choice.addEventListener("click", () => {
+    const project = projects[choice.dataset.project];
+    const image = projectPreview?.querySelector("[data-project-image]");
+    const label = projectPreview?.querySelector("[data-project-label]");
+    const title = projectPreview?.querySelector("[data-project-title]");
+    const description = projectPreview?.querySelector("[data-project-description]");
+    const link = projectPreview?.querySelector("[data-project-link]");
+
+    projectChoices.forEach((item) => { item.classList.remove("is-active"); item.setAttribute("aria-pressed", "false"); });
+    choice.classList.add("is-active");
+    choice.setAttribute("aria-pressed", "true");
+    if (label) label.textContent = project.label;
+    if (title) title.textContent = project.title;
+    if (description) description.textContent = project.description;
+    if (image) { image.style.backgroundImage = project.image ? `url("${project.image}")` : "none"; image.style.backgroundColor = project.available ? "" : "#27282a"; }
+    if (link) {
+      link.innerHTML = project.available
+        ? `${project.action}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" /></svg>`
+        : project.action;
+      link.setAttribute("aria-disabled", String(!project.available));
+      if (project.available) { link.href = project.href; link.target = "_blank"; link.rel = "noreferrer"; }
+      else { link.removeAttribute("href"); link.removeAttribute("target"); }
+    }
+  });
+});
 
 if ("IntersectionObserver" in window && !reduceMotion.matches) {
   const observer = new IntersectionObserver(
