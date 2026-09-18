@@ -113,16 +113,24 @@
 
       <section class="projects section" id="projetos" aria-labelledby="projects-title">
         <div class="projects-frame reveal">
-          <div>
-            <h2 id="projects-title">Projetos selecionados</h2>
-            <p>Uma coleção de cases autorais está em produção. Cada projeto será criado para um segmento diferente e identificado com transparência como conceito.</p>
+          <div class="project-preview" data-project-preview>
+            <div class="project-preview-image" data-project-image aria-hidden="true"></div>
+            <div class="project-preview-copy">
+              <p class="project-label" data-project-label>Case conceitual · Boutique local</p>
+              <h2 id="projects-title" data-project-title>AURA</h2>
+              <p data-project-description>Uma boutique autoral, próxima e acessível, criada para valorizar pequenas coleções, atendimento local e venda pelo WhatsApp.</p>
+              <a class="project-link" data-project-link href="https://aura-boutique-eta.vercel.app/" target="_blank" rel="noreferrer">
+                Ver case completo
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" /></svg>
+              </a>
+            </div>
           </div>
           <div class="project-index" aria-label="Cases planejados">
-            <span>Moda</span>
-            <span>Gastronomia</span>
-            <span>Serviços</span>
+            <button class="project-choice is-active" type="button" data-project="moda" aria-pressed="true"><span>Moda</span><small>Case disponível</small></button>
+            <button class="project-choice" type="button" data-project="gastronomia" aria-pressed="false"><span>Gastronomia</span><small>Em produção</small></button>
+            <button class="project-choice" type="button" data-project="servicos" aria-pressed="false"><span>Serviços</span><small>Em produção</small></button>
           </div>
-          <p class="projects-note">Próxima atualização: primeiros cases completos.</p>
+          <p class="projects-note">Clique em um segmento para explorar o conceito.</p>
         </div>
       </section>
 
