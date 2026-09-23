@@ -191,3 +191,10 @@ Services are editorial rows rather than cards. A title and stroked arrow lead, e
 - **Don't** use emoji or Unicode characters as interface icons; use the established stroked SVG language.
 - **Don't** distribute many unrelated hover and entrance effects across the page.
 
+## Case presentation system
+
+The Home gives available projects equal prominence through full-width editorial features. Each links to a local case page; the published concept site is a secondary destination inside that page.
+
+Case pages share a portfolio frame: return navigation, project category and conceptual status, visual lead, concise context, design rationale, experience and implementation notes, published-project CTA, and next-case navigation. The frame uses the portfolio's spacing, focus, links, and responsive behavior. Individual projects own their imagery, color field, and editorial display voice: AURA uses its existing Playfair Display fashion direction, while KŌEN uses its existing Instrument Serif restaurant direction. These are deliberate case-level exceptions to the two-voice portfolio rule, not new global fonts.
+
+Add a future case by creating a new page under `projetos/`, using `case.css` and `case.js`, and adding a peer feature to the Home. Keep claims factual and identify conceptual work clearly.

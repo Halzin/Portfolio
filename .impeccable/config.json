@@ -1,0 +1,38 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "playfair display",
+        "createdAt": "2026-09-23T20:46:58.014Z",
+        "reason": "AURA retains its existing editorial fashion typeface in the case page."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "instrument serif",
+        "createdAt": "2026-09-23T20:47:05.318Z",
+        "reason": "KŌEN retains its existing editorial restaurant typeface in the case page."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "projetos/aura/index.html"
+        ],
+        "createdAt": "2026-09-23T20:52:07.510Z",
+        "reason": "Case sections have responsive inset padding; the hero image intentionally bleeds to the edge."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "projetos/koen/index.html"
+        ],
+        "createdAt": "2026-09-23T20:52:12.783Z",
+        "reason": "Case sections have responsive inset padding; full-bleed photography is intentional."
+      }
+    ]
+  }
+}

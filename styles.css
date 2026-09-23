@@ -418,7 +418,6 @@ h1 em {
 }
 
 .section-heading h2,
-.projects-frame h2,
 .contact h2 {
   max-width: 11ch;
   margin: 0;
@@ -500,59 +499,30 @@ h1 em {
   color: var(--white);
 }
 
-.projects-frame {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
-  gap: clamp(3rem, 9vw, 10rem);
-}
-
-.project-preview { min-height: 34rem; display: grid; grid-template-columns: minmax(12rem, .7fr) minmax(16rem, 1fr); background: #151515; }
-.project-preview-image { min-height: 100%; background: url("https://aura-boutique-eta.vercel.app/assets/hero-aura.png") center / cover no-repeat; transition: filter 500ms var(--ease-out), opacity 500ms var(--ease-out); }
-.project-preview-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 4vw, 3.5rem); }
-.project-preview-copy h2 { max-width: 9ch; }
-.project-preview-copy p:not(.project-label) { max-width: 38ch; margin: 1.5rem 0 0; color: #b6b7bb; }
-.project-label { margin: 0 0 1rem; color: #dce8ff; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-.project-link { display: inline-flex; width: fit-content; align-items: center; gap: .9rem; margin-top: 2rem; color: var(--white); font-size: .9rem; font-weight: 600; text-underline-offset: .35em; }
-.project-link svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
-.project-link[aria-disabled="true"] { color: #85868a; pointer-events: none; text-decoration: none; }
-
-.project-index {
-  align-self: start;
-  border-top: 1px solid #4a4a4a;
-}
-
-.project-choice {
-  display: flex;
-  width: 100%;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.1rem 0;
-  color: #c6c7ca;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #4a4a4a;
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 3vw, 2.8rem);
-  font-stretch: 110%;
-  font-weight: 330;
-  line-height: 1;
-  text-align: left;
-  transition: color 250ms ease, padding-left 300ms var(--ease-out);
-}
-
-.project-choice small { color: #85868a; font-family: var(--body); font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
-.project-choice:hover, .project-choice.is-active { padding-left: .8rem; color: var(--white); }
-.project-choice.is-active::before { width: .45rem; height: .45rem; content: ""; flex: 0 0 auto; margin-right: -.7rem; background: #dce8ff; border-radius: 50%; }
-
-.projects-note {
-  grid-column: 1 / -1;
-  margin: 4rem 0 0;
-  color: #929398;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
+.projects-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(2.5rem, 6vw, 5rem); }
+.projects-heading h2 { margin: 0; font: 580 clamp(3rem, 6vw, 5.8rem)/.94 var(--display); font-stretch: 88%; letter-spacing: -.035em; }
+.projects-heading p { max-width: 38ch; margin: 0; color: #b6b7bb; }
+.project-showcase { display: grid; gap: clamp(1.5rem, 3vw, 3rem); }
+.project-feature { display: grid; height: 30rem; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); overflow: hidden; }
+.project-feature-koen { height: 31rem; }
+.project-feature-koen .project-feature-image { order: 2; }
+.project-feature-image { position: relative; min-height: 0; overflow: hidden; }
+.project-feature-image img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 650ms var(--ease-out); }
+.project-feature:hover .project-feature-image img { transform: scale(1.035); }
+.project-feature-aura .project-feature-image img { object-position: 65% 12%; }
+.project-feature-koen .project-feature-image img { object-position: 68% center; }
+.project-feature-copy { display: flex; flex-direction: column; align-items: start; justify-content: end; padding: clamp(1.75rem, 3.4vw, 3.5rem); }
+.project-feature-aura .project-feature-copy { background: #944b39; color: #fff7ef; }
+.project-feature-koen .project-feature-copy { background: #27231e; color: #f7f0e4; }
+.project-category { font-size: .78rem; font-weight: 600; letter-spacing: .02em; }
+.project-feature h3 { margin: clamp(2rem, 3.4vw, 3.5rem) 0 0; font: 580 clamp(4rem, 8vw, 7rem)/.85 var(--display); font-stretch: 88%; letter-spacing: -.035em; }
+.project-feature-koen h3 { font-weight: 420; letter-spacing: -.02em; }
+.project-feature p { max-width: 37ch; margin: 1.5rem 0 0; font-size: clamp(1rem, 1.3vw, 1.16rem); }
+.project-feature a { display: inline-flex; align-items: center; gap: 1rem; min-height: 3rem; margin-top: 2rem; font-weight: 600; text-decoration-thickness: 1px; }
+.project-feature a svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; transition: transform 250ms var(--ease-out); }
+.project-feature a:hover svg { transform: translate(3px, -3px); }
+.projects-next { display: flex; justify-content: space-between; gap: 1rem; margin: 3.5rem 0 0; padding-top: 1rem; border-top: 1px solid #565656; color: #d3d3d3; font-size: .78rem; letter-spacing: .02em; }
+.projects-next span { color: #aeb0b4; }
 
 .process {
   background: var(--white);
@@ -731,8 +701,7 @@ h1 em {
     min-height: 36rem;
   }
 
-  .section-heading,
-  .projects-frame {
+  .section-heading {
     grid-template-columns: 1fr;
   }
 
@@ -831,9 +800,17 @@ h1 em {
     gap: 1.5rem;
   }
 
-  .project-preview { min-height: auto; grid-template-columns: 1fr; }
-  .project-preview-image { min-height: 20rem; }
-  .project-preview-copy { min-height: 24rem; }
+  .projects-heading { display: block; }
+  .projects-heading p { margin-top: 1.5rem; }
+  .project-feature, .project-feature-koen { height: auto; grid-template-columns: 1fr; }
+  .project-feature-koen .project-feature-image { order: 0; }
+  .project-feature-image { height: clamp(16rem, 68vw, 22rem); }
+  .project-feature-copy { min-height: 0; padding: clamp(1.5rem, 6vw, 2.5rem); }
+  .project-feature h3 { margin-top: 1.5rem; font-size: clamp(3.75rem, 16vw, 5rem); }
+  .project-feature p { margin-top: 1rem; }
+  .project-feature a { margin-top: 1.5rem; }
+  .projects-next { display: block; }
+  .projects-next span { display: block; margin-top: .35rem; }
 
   .service-row {
     grid-template-columns: 1fr;

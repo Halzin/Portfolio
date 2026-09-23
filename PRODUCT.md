@@ -31,7 +31,7 @@ The portfolio link is shared during cold outreach when a lead asks to see exampl
 - One-page portfolio in Brazilian Portuguese.
 - Initial services: institutional websites and landing pages.
 - Primary contact: WhatsApp.
-- Project cases will be created and added in a later phase.
+- Two conceptual project cases are available: AURA (Moda) and KŌEN (Gastronomia). The next category is Serviços.
 - Contact details are temporary and must remain easy to update.
 - Deployment target: Vercel, with source control on GitHub.
 
@@ -44,7 +44,7 @@ The portfolio link is shared during cold outreach when a lead asks to see exampl
 
 ## Evidence on Hand
 
-No real client projects, testimonials, performance numbers, or case studies are available yet. Future concept work must be identified honestly and must not be presented as paid client work.
+No real client projects, testimonials, or performance numbers are available. AURA and KŌEN are conceptual portfolio projects and must not be presented as paid client work.
 
 ## Product Principles
 
@@ -53,4 +53,3 @@ No real client projects, testimonials, performance numbers, or case studies are 
 - Keep contact immediate and low-friction.
 - Never fabricate clients, results, or testimonials.
 - Keep the portfolio easy to extend with future cases.
-

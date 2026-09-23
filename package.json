@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "lint": "node --check script.js && node --check projetos/case.js && node --check cases/aura/script.js",
+    "build": "node scripts/build.mjs"
+  }
+}
