@@ -8,7 +8,7 @@ await mkdir(output, { recursive: true });
 for (const name of ['index.html', 'styles.css', 'script.js', 'favicon.svg', 'hero-workspace.png', 'cases', 'projetos']) {
   await cp(join(root, name), join(output, name), { recursive: true });
 }
-for (const name of ['index.html', 'projetos/aura/index.html', 'projetos/koen/index.html']) {
+for (const name of ['index.html', 'projetos/aura/index.html', 'projetos/koen/index.html', 'projetos/mateus/index.html']) {
   await stat(join(output, name));
 }
 console.log('Static production build complete: dist/');

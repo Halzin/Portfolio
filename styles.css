@@ -506,17 +506,21 @@ h1 em {
 .project-feature { display: grid; height: 30rem; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); overflow: hidden; }
 .project-feature-koen { height: 31rem; }
 .project-feature-koen .project-feature-image { order: 2; }
+.project-feature-mateus { height: 31rem; }
 .project-feature-image { position: relative; min-height: 0; overflow: hidden; }
 .project-feature-image img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 650ms var(--ease-out); }
 .project-feature:hover .project-feature-image img { transform: scale(1.035); }
 .project-feature-aura .project-feature-image img { object-position: 65% 12%; }
 .project-feature-koen .project-feature-image img { object-position: 68% center; }
+.project-feature-mateus .project-feature-image img { object-position: 53% center; }
 .project-feature-copy { display: flex; flex-direction: column; align-items: start; justify-content: end; padding: clamp(1.75rem, 3.4vw, 3.5rem); }
 .project-feature-aura .project-feature-copy { background: #944b39; color: #fff7ef; }
 .project-feature-koen .project-feature-copy { background: #27231e; color: #f7f0e4; }
+.project-feature-mateus .project-feature-copy { background: #081521; color: #f5f6f8; }
 .project-category { font-size: .78rem; font-weight: 600; letter-spacing: .02em; }
 .project-feature h3 { margin: clamp(2rem, 3.4vw, 3.5rem) 0 0; font: 580 clamp(4rem, 8vw, 7rem)/.85 var(--display); font-stretch: 88%; letter-spacing: -.035em; }
 .project-feature-koen h3 { font-weight: 420; letter-spacing: -.02em; }
+.project-feature-mateus h3 { font-size: clamp(3.75rem, 6vw, 5.5rem); }
 .project-feature p { max-width: 37ch; margin: 1.5rem 0 0; font-size: clamp(1rem, 1.3vw, 1.16rem); }
 .project-feature a { display: inline-flex; align-items: center; gap: 1rem; min-height: 3rem; margin-top: 2rem; font-weight: 600; text-decoration-thickness: 1px; }
 .project-feature a svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; transition: transform 250ms var(--ease-out); }
@@ -802,11 +806,12 @@ h1 em {
 
   .projects-heading { display: block; }
   .projects-heading p { margin-top: 1.5rem; }
-  .project-feature, .project-feature-koen { height: auto; grid-template-columns: 1fr; }
+  .project-feature, .project-feature-koen, .project-feature-mateus { height: auto; grid-template-columns: 1fr; }
   .project-feature-koen .project-feature-image { order: 0; }
   .project-feature-image { height: clamp(16rem, 68vw, 22rem); }
   .project-feature-copy { min-height: 0; padding: clamp(1.5rem, 6vw, 2.5rem); }
   .project-feature h3 { margin-top: 1.5rem; font-size: clamp(3.75rem, 16vw, 5rem); }
+  .project-feature-mateus h3 { font-size: clamp(3.5rem, 14vw, 5rem); }
   .project-feature p { margin-top: 1rem; }
   .project-feature a { margin-top: 1.5rem; }
   .projects-next { display: block; }
