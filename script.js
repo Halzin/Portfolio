@@ -21,6 +21,7 @@ menuButton?.addEventListener("click", () => {
 nav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     menuButton?.setAttribute("aria-expanded", "false");
+    if (menuButton) menuButton.querySelector(".sr-only").textContent = "Abrir menu";
     nav.classList.remove("is-open");
   });
 });

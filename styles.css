@@ -194,7 +194,7 @@ a {
   z-index: -1;
   inset: 0;
   content: "";
-  background: linear-gradient(90deg, rgba(245, 246, 248, 0.94) 0%, rgba(245, 246, 248, 0.87) 42%, rgba(245, 246, 248, 0.48) 100%), url("./hero-workspace.png") center / cover;
+  background: linear-gradient(90deg, rgba(245, 246, 248, 0.94) 0%, rgba(245, 246, 248, 0.87) 42%, rgba(245, 246, 248, 0.48) 100%), url("./hero-workspace.webp") center / cover;
   opacity: 0.56;
 }
 
@@ -731,6 +731,12 @@ h1 em {
 }
 
 @media (max-width: 720px) {
+  .js .reveal {
+    transform: translateY(1rem);
+    filter: none;
+    transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+  }
+
   .site-header {
     min-height: 4rem;
   }

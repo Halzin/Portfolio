@@ -11,8 +11,8 @@ Projeto demonstrativo criado para o portfólio de Gustavo Martins. A marca, os p
 ## Interações incluídas
 
 - Janela de detalhes dos produtos
-- Seleção visual de tamanho
-- Sacola lateral
+- Seleção de tamanho refletida na sacola
+- Sacola lateral com estado vazio e itens adicionados
 - Animações leves e layout responsivo
 
 Para testar, abra `index.html` em um servidor local. Para publicar na Vercel, importe esta pasta como um novo projeto estático.

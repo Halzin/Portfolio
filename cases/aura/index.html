@@ -33,7 +33,7 @@
             <a class="text-action" href="#colecao">Ver a coleção <span aria-hidden="true">↘</span></a>
           </div>
           <div class="hero-visual">
-            <img src="assets/hero-aura.png" alt="Modelo usando vestido terracota em frente à boutique AURA" />
+            <img src="assets/hero-aura.webp" alt="Modelo usando vestido terracota em frente à boutique AURA" />
             <button class="look-marker marker-top" type="button" data-product="vestido" aria-label="Ver detalhes do Vestido Nuvem"><span>+</span><small>Vestido Nuvem</small></button>
             <div class="image-caption"><span>01</span><span>Verão em movimento</span></div>
           </div>
@@ -54,22 +54,22 @@
             <p>Escolha uma peça para abrir sua janela de detalhes.</p>
           </div>
           <div class="product-grid">
-            <article class="product-card featured" data-product="vestido" tabindex="0">
-              <button class="product-open" type="button" aria-label="Abrir Vestido Nuvem">
+            <article class="product-card featured">
+              <button class="product-open" type="button" data-product="vestido" aria-label="Abrir Vestido Nuvem">
                 <span class="garment dress"></span>
                 <span class="product-meta"><b>Vestido Nuvem</b><small>R$ 189,00</small></span>
                 <span class="product-index">01</span>
               </button>
             </article>
-            <article class="product-card olive" data-product="blusa" tabindex="0">
-              <button class="product-open" type="button" aria-label="Abrir Blusa Linha">
+            <article class="product-card olive">
+              <button class="product-open" type="button" data-product="blusa" aria-label="Abrir Blusa Linha">
                 <span class="garment blouse"></span>
                 <span class="product-meta"><b>Blusa Linha</b><small>R$ 119,00</small></span>
                 <span class="product-index">02</span>
               </button>
             </article>
-            <article class="product-card stripe" data-product="saia" tabindex="0">
-              <button class="product-open" type="button" aria-label="Abrir Saia Encontro">
+            <article class="product-card stripe">
+              <button class="product-open" type="button" data-product="saia" aria-label="Abrir Saia Encontro">
                 <span class="garment skirt"></span>
                 <span class="product-meta"><b>Saia Encontro</b><small>R$ 149,00</small></span>
                 <span class="product-index">03</span>
@@ -108,16 +108,16 @@
         <h2 id="dialogTitle">Vestido Nuvem</h2>
         <p class="dialog-price" id="dialogPrice">R$ 189,00</p>
         <p id="dialogDescription">Leve, soltinho e feito para dias que pedem movimento. Em viscose com botões de madeira.</p>
-        <div class="size-row" aria-label="Selecione o tamanho"><button type="button">P</button><button type="button">M</button><button type="button">G</button></div>
+        <div class="size-row" role="group" aria-label="Selecione o tamanho"><button type="button" data-size="P" aria-pressed="true">P</button><button type="button" data-size="M" aria-pressed="false">M</button><button type="button" data-size="G" aria-pressed="false">G</button></div>
         <button class="add-button" type="button" id="addButton">Adicionar à sacola <span aria-hidden="true">↗</span></button>
       </div>
     </dialog>
 
-    <aside class="bag-panel" id="bagPanel" aria-live="polite" aria-label="Sacola de compras">
+    <aside class="bag-panel" id="bagPanel" role="dialog" aria-modal="true" aria-labelledby="bagTitle" inert>
       <button class="bag-close" type="button" aria-label="Fechar sacola">×</button>
       <p class="microcopy">Sua sacola</p>
-      <h2>Por enquanto,<br /><em>vazia.</em></h2>
-      <p class="bag-message">Escolha uma peça e ela aparece aqui.</p>
+      <h2 id="bagTitle">Por enquanto,<br /><em>vazia.</em></h2>
+      <div class="bag-message" aria-live="polite">Escolha uma peça e ela aparece aqui.</div>
     </aside>
     <script src="script.js"></script>
   </body>
